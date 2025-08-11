@@ -1,0 +1,264 @@
+:root {
+  --bg-color: #fffaf3;
+  --text-color: #3e2723;
+  --card-bg: #f5e0c3;
+  --accent-color: #795548;
+}
+
+body.dark {
+  --bg-color: #2e2724;
+  --text-color: #f5e0c3;
+  --card-bg: #3e302c;
+  --accent-color: #d7ccc8;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: var(--bg-color);
+  color: var(--text-color);
+  transition: background 0.3s, color 0.3s;
+  font-family: "Pacifico";
+}
+
+header {
+  background: var(--accent-color);
+  padding: 10px 20px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo img {
+  transform: translateY(-12px);
+  filter: invert(100%);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+  margin: 0;
+  padding: 0;
+}
+
+nav a {
+  text-decoration: none;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 4px;
+  transition: background 0.3s;
+}
+
+nav a.active,
+nav a:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+#modeToggle {
+  background: transparent;
+  border: none;
+  font-size: 1.2em;
+  cursor: pointer;
+  color: #fff;
+}
+
+main {
+  padding: 20px;
+}
+
+.hero {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.hero h1 {
+  font-size: 2.5em;
+}
+
+.hero button {
+  background: var(--accent-color);
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  margin-top: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 15px;
+}
+
+.card {
+  background: var(--card-bg);
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.card p {
+  font-family: "quicksand";
+}
+
+.card:hover {
+  transform: translateY(-3px);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 400px;
+}
+
+input,
+textarea,
+button {
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid var(--accent-color);
+  border-radius: 4px;
+}
+
+button {
+  background: var(--accent-color);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+footer {
+  text-align: center;
+  padding: 10px;
+  background: var(--accent-color);
+  color: #fff;
+}
+
+@media (max-width: 600px) {
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+#content {
+  background: url("./roasted-coffee-beans.jpg") center/cover no-repeat;
+  position: relative;
+  padding: 20px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+#content::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 250, 243, 0.6);
+  z-index: 0;
+}
+
+#content > * {
+  position: relative;
+  z-index: 1;
+}
+
+body.dark #content::before {
+  background: rgba(46, 39, 36, 0.6);
+}
+
+body.dark header,
+body.dark footer {
+  background: #4b2e2b; /* deep coffee brown */
+  color: #f5e0c3;
+}
+
+body.dark nav a {
+  color: #f5e0c3;
+}
+
+body.dark nav a.active,
+body.dark nav a:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+body.dark #modeToggle {
+  color: #f5e0c3;
+}
+
+#contactForm button {
+  background: linear-gradient(135deg, #8b4513, #5c3317);
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 12px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#contactForm button:hover {
+  background: linear-gradient(135deg, #a0522d, #7b3f1d);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+body.dark #contactForm button {
+  background: linear-gradient(135deg, #d2a679, #8b5a2b);
+  color: #2e2724;
+}
+
+body.dark #contactForm button:hover {
+  background: linear-gradient(135deg, #deb887, #a0522d);
+}
+
+.hero button {
+  background: linear-gradient(135deg, #8b4513, #5c3317);
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 14px 28px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.hero button:hover {
+  background: linear-gradient(135deg, #a0522d, #7b3f1d);
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+body.dark .hero button {
+  background: linear-gradient(135deg, #d2a679, #8b5a2b);
+  color: #2e2724;
+}
+
+body.dark .hero button:hover {
+  background: linear-gradient(135deg, #deb887, #a0522d);
+}
